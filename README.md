@@ -44,5 +44,9 @@ manifest の反映
 
     open http://$VM
 
+ログ出力
+
+    kubectl exec sample-deployment-84d7b4f486-qsnr2 -- printenv
+
 参考
 [Kubernetes API Reference Docs](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.22/#envvar-v1-core)
