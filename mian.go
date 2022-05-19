@@ -54,5 +54,10 @@ func main() {
 func handler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	io.WriteString(w, `{"message": "Hello World!"}`)
+	env := os.Getenv("GOMAXPROCS")
+	if env == "1" {
+		io.WriteString(w, `{"message": "111"}`)
+	} else if env == "2" {
+		io.WriteString(w, `{"message": "222"}`)
+	}
 }

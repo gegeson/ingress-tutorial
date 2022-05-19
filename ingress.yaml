@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: ingress-tutorial
+  name: sample-ingress
+spec:
+  ingressClassName: public
+  defaultBackend:
+    service:
+      name: sample-service
+      port:
+        name: api
+  rules:
+    - http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: sample-service
+              port:
+                number: 8000
+        - path: /foo
+          pathType: Prefix
+          backend:
+            service:
+              name: sample-service2
+              port:
+                number: 8080
