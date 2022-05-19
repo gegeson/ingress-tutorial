@@ -8,6 +8,6 @@ spec:
     app.kubernetes.io/name: sample-pod
   ports:
     - name: api
-      port: 8080
+      port: 8000
       protocol: TCP
   type: ClusterIP

@@ -26,4 +26,4 @@ spec:
             service:
               name: sample-service2
               port:
-                number: 8080
+                number: 8000
